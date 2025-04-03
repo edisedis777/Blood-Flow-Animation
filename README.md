@@ -6,20 +6,20 @@ A dynamic and interactive web-based simulation of blood flow, visualizing red bl
 
 ## Features
 - Realistic Particle System: Simulates blood cells with distinct sizes, colors, and behaviors:
-- Red Blood Cells (85%): Oxygen carriers with a concave shape.
-- White Blood Cells (10%): Immune cells with granular textures.
-- Platelets (5%): Clotting cells with irregular shapes.
+  - Red Blood Cells (85%): Oxygen carriers with a concave shape.
+  - White Blood Cells (10%): Immune cells with granular textures.
+  - Platelets (5%): Clotting cells with irregular shapes.
 
-- Visualization Modes:
+## Visualization Modes:
 - Particles: Displays individual blood cells flowing in a wave-like motion.
 - Wave: Shows a smooth wave representing the collective motion of the cells.
-- Interactive Controls: Adjust flow speed, cell count, pulse strength, and frequency in real-time.
-- Blood Vessel Effect: Animated vessel walls with gradients for a realistic backdrop.
-- Performance Monitoring: Built-in FPS counter to track animation smoothness.
+- Interactive Controls: Adjust flow speed, cell count, pulse strength, and frequency.
+- Blood Vessel Effect: Animated vessel walls with gradients.
+- Performance Monitoring: FPS counter to track animation smoothness.
 - Responsive Design: Adapts to various screen sizes.
 
 ## Demo
-[Live demo](r)
+[Live demo](https://edisedis777.github.io/Blood-Flow-Animation/)
 
 ## Installation
 - Clone the Repository:
