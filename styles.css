@@ -1,0 +1,276 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #0a0a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+canvas {
+  display: block;
+}
+
+.title-bar {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  text-align: center;
+}
+
+.title-bar h1 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 24px;
+}
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 95%;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+.visualization-mode {
+  min-width: 180px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 5px;
+}
+
+label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  background: #e0e0e0;
+  border-radius: 3px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3498db;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #2980b9;
+}
+
+.value-display {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #666;
+}
+
+button {
+  padding: 10px 18px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#reset {
+  background: #e74c3c;
+}
+
+#reset:hover {
+  background: #c0392b;
+}
+
+#pause {
+  background: #f39c12;
+}
+
+#pause:hover {
+  background: #d35400;
+}
+
+.info-panel {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.info-panel h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.info-panel p,
+.info-panel ul {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.info-panel ul {
+  padding-left: 20px;
+}
+
+#toggle-info {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #7f8c8d;
+  font-size: 12px;
+  padding: 6px 12px;
+  z-index: 30;
+}
+
+#toggle-info:hover {
+  background: #616a6b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .title-bar {
+    top: 10px;
+    padding: 8px 16px;
+    width: 80%;
+  }
+
+  .title-bar h1 {
+    font-size: 18px;
+  }
+
+  .controls {
+    bottom: 10px;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .control-group {
+    min-width: 100px;
+  }
+
+  .info-panel {
+    top: 60px;
+    right: 10px;
+    max-width: 80%;
+    max-height: 60vh;
+    overflow-y: auto;
+    font-size: 12px;
+  }
+
+  #toggle-info {
+    top: 10px;
+    right: 10px;
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+  .control-group {
+    min-width: 80px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .radio-group label {
+    font-size: 12px;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Animation for controls and info panel */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title-bar,
+.controls,
+.info-panel,
+#toggle-info {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

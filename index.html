@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Blood Flow Animation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+
+    <div class="title-bar">
+      <h1>Blood Flow Simulation</h1>
+    </div>
+
+    <button id="toggle-info">Show Info</button>
+
+    <div class="info-panel hidden">
+      <h3>About This Simulation</h3>
+      <p>
+        This simulation shows a simplified model of blood cells flowing through
+        a vessel.
+      </p>
+      <ul>
+        <li>
+          <strong>Red particles:</strong> Red blood cells (oxygen carriers)
+        </li>
+        <li>
+          <strong>Gray particles:</strong> White blood cells (immune cells)
+        </li>
+        <li><strong>Yellow particles:</strong> Platelets (clotting cells)</li>
+      </ul>
+      <p>Use the controls at the bottom to adjust the simulation parameters.</p>
+    </div>
+
+    <div class="controls">
+      <div class="control-group">
+        <label for="speed">Flow Speed</label>
+        <input type="range" id="speed" min="0.5" max="5" step="0.1" value="2" />
+        <span class="value-display" id="speed-value">2.0</span>
+      </div>
+      <div class="control-group">
+        <label for="particles">Cell Count</label>
+        <input
+          type="range"
+          id="particles"
+          min="500"
+          max="5000"
+          step="100"
+          value="1500" />
+        <span class="value-display" id="particles-value">1500</span>
+      </div>
+      <div class="control-group">
+        <label for="amplitude">Pulse Strength</label>
+        <input type="range" id="amplitude" min="50" max="200" value="100" />
+        <span class="value-display" id="amplitude-value">100</span>
+      </div>
+      <div class="control-group">
+        <label for="frequency">Pulse Frequency</label>
+        <input
+          type="range"
+          id="frequency"
+          min="0.001"
+          max="0.01"
+          step="0.001"
+          value="0.005" />
+        <span class="value-display" id="frequency-value">0.005</span>
+      </div>
+      <div class="control-group visualization-mode">
+        <label>Visualization Mode</label>
+        <div class="radio-group">
+          <input
+            type="radio"
+            id="mode-particles"
+            name="mode"
+            value="particles"
+            checked />
+          <label for="mode-particles">Particles</label>
+          <input type="radio" id="mode-wave" name="mode" value="wave" />
+          <label for="mode-wave">Wave</label>
+        </div>
+      </div>
+      <button id="reset">Reset</button>
+      <button id="pause">Pause</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
