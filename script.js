@@ -289,6 +289,7 @@ function drawVessel() {
     ctx.lineTo(x, centerY - vesselHeight / 2 + offset);
   }
 
+  // Fix the right side of the vessel to match the left side
   ctx.lineTo(canvas.width, 0);
   ctx.lineTo(0, 0);
   ctx.closePath();
@@ -314,6 +315,7 @@ function drawVessel() {
     ctx.lineTo(x, centerY + vesselHeight / 2 + offset);
   }
 
+  // Fix the right side of the vessel to match the left side
   ctx.lineTo(canvas.width, canvas.height);
   ctx.lineTo(0, canvas.height);
   ctx.closePath();
