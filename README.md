@@ -75,4 +75,4 @@ enhanced-blood-flow-animation/
 Contributions are welcome!
 
 ## License
-This project is licensed under the MIT License. See the  file for details.
+Distributed under the GNU Affero General Public License v3.0 License. See `LICENSE` for more information.
